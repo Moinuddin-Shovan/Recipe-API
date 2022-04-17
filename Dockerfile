@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER Moinuddin Kader
+# MAINTAINER Moinuddin Kader
 
 ENV PYTHONUNBUFFERED 1
 # RECOMMENDED FOR DOCKER
