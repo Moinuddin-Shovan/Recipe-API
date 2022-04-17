@@ -1,6 +1,13 @@
 version: "3"
 
 services:
+  # lint:
+  #     image: hoto/flake8:4.0.1
+  #     command: flake8 /scripts /tests
+  #     volumes:
+  #       - ./scripts:/scripts
+  #       - ./tests:/tests
+  #       - ./.flake8:/.flake8
   app:
     build:
       context: .
