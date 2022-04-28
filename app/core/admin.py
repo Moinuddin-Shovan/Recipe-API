@@ -1,10 +1,8 @@
-from dataclasses import field
-import imp
 from django.contrib import admin
-
 from django.contrib.auth.admin import UserAdmin as BaseUser
 from core import models
 from django.utils.translation import gettext as _
+
 
 class UserAdmin(BaseUser):
     ordering = ['id']
@@ -21,8 +19,9 @@ class UserAdmin(BaseUser):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields':('email', 'password1', 'password2')
-        }),# Comma here is important. Not to confuse python as it is not an object
+            'fields': ('email', 'password1', 'password2')
+        }),
+        # Comma here is important. Not to confuse it as an object
     )
 
 
