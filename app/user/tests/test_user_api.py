@@ -1,3 +1,4 @@
+import email
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -80,7 +81,6 @@ class PublicUserApiTests(TestCase):
     def test_retrieve_user_unauthorized(self):
         """Test that authentication required for users"""
         res = self.client.get(ME_URL)
-
         self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
         # status.HTTP_401_UNAUTHORIZED)
 
@@ -96,7 +96,7 @@ class PrivateUserApiTests(TestCase):
         )
 
         self.client = APIClient()
-        self.client.force_authenticate(user=self.user)
+        self.client.force_authenticate(user = self.user)
 
     def test_retrieve_profile_success(self):
         '''Test retrieving profile for logged in users '''
