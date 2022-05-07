@@ -1,3 +1,4 @@
+import email
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -81,9 +82,13 @@ class PublicUserApiTests(TestCase):
         """Test that authentication required for users"""
         res = self.client.get(ME_URL)
 
+<<<<<<< HEAD
         self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
         # status.HTTP_401_UNAUTHORIZED)
 
+=======
+        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+>>>>>>> 53f1830c733274348e0c2b03140abb97f1d229a3
 
 class PrivateUserApiTests(TestCase):
     '''Test APIs that requires authentication'''
@@ -96,7 +101,11 @@ class PrivateUserApiTests(TestCase):
         )
 
         self.client = APIClient()
+<<<<<<< HEAD
         self.client.force_authenticate(user=self.user)
+=======
+        self.client.force_authenticate(user = self.user)
+>>>>>>> 53f1830c733274348e0c2b03140abb97f1d229a3
 
     def test_retrieve_profile_success(self):
         '''Test retrieving profile for logged in users '''
@@ -122,4 +131,8 @@ class PrivateUserApiTests(TestCase):
 
         self.assertEqual(self.user.name, payload['name'])
         self.assertTrue(self.user.check_password(payload['password']))
+<<<<<<< HEAD
         self.assertEqual(res.status_code, status.HTTP_200_OK)
+=======
+        self.assertEqual(res.status_code, status.HTTP_200_OK)
+>>>>>>> 53f1830c733274348e0c2b03140abb97f1d229a3
