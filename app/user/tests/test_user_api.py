@@ -1,4 +1,3 @@
-import email
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -96,7 +95,7 @@ class PrivateUserApiTests(TestCase):
         )
 
         self.client = APIClient()
-        self.client.force_authenticate(user = self.user)
+        self.client.force_authenticate(user=self.user)
 
     def test_retrieve_profile_success(self):
         '''Test retrieving profile for logged in users '''
